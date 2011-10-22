@@ -2,15 +2,15 @@ Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
 Version:	0.9.14
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Libraries
 Source0:	http://samba.org/ftp/tevent/%{name}-%{version}.tar.gz
 # Source0-md5:	0fb9f344015aa423157cc702bead0f99
 URL:		http://tevent.samba.org/
-BuildRequires:	libtalloc-devel >= 2:2.0.5
+BuildRequires:	talloc-devel >= 2.0.5
 BuildRequires:	python-devel >= 1:2.4.2
-BuildRequires:	python-talloc-devel >= 2:2.0.5
+BuildRequires:	python-talloc-devel >= 2.0.5
 BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +40,7 @@ Summary:	Header files for tevent library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tevent
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libtalloc-devel >= 2:2.0.5
+Requires:	talloc-devel >= 2.0.5
 
 %description devel
 Header files for tevent library.
@@ -53,7 +53,7 @@ Summary:	Python bindings for tevent
 Summary(pl.UTF-8):	Pythonowy interfejs do tevent
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-talloc >= 2:2.0.5
+Requires:	python-talloc >= 2.0.5
 %pyrequires_eq  python-libs
 
 %description -n python-tevent
