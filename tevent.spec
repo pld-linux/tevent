@@ -12,6 +12,7 @@ BuildRequires:	talloc-devel >= 2.0.5
 BuildRequires:	python-devel >= 1:2.4.2
 BuildRequires:	python-talloc-devel >= 2.0.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -83,6 +84,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%py_comp $RPM_BUILD_ROOT%{py_sitedir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_postclean
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -103,3 +108,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-tevent
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/_tevent.so
+%{py_sitedir}/tevent.py[co]
