@@ -1,12 +1,12 @@
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.9.20
+Version:	0.9.21
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	http://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	af83d7599b595c97af3ae687151b7a44
+# Source0-md5:	3d5a76c0a1b5f724842d785fd055633f
 URL:		http://tevent.samba.org/
 BuildRequires:	talloc-devel >= 2.0.8
 BuildRequires:	python-devel >= 1:2.4.2
