@@ -8,9 +8,9 @@ Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
 # Source0-md5:	6859cd4081fdb2a76b1cb4bf1c803a59
 URL:		http://tevent.samba.org/
-BuildRequires:	talloc-devel >= 2:2.1.11
+BuildRequires:	talloc-devel >= 2:2.1.13
 BuildRequires:	python-devel >= 1:2.4.2
-BuildRequires:	python-talloc-devel >= 2:2.1.11
+BuildRequires:	python-talloc-devel >= 2:2.1.13
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,7 +41,7 @@ Summary:	Header files for tevent library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tevent
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	talloc-devel >= 2:2.1.11
+Requires:	talloc-devel >= 2:2.1.13
 
 %description devel
 Header files for tevent library.
@@ -54,7 +54,7 @@ Summary:	Python bindings for tevent
 Summary(pl.UTF-8):	Pythonowy interfejs do tevent
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-talloc >= 2:2.1.11
+Requires:	python-talloc >= 2:2.1.13
 %pyrequires_eq  python-libs
 
 %description -n python-tevent
