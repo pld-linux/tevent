@@ -1,21 +1,13 @@
-#
-# Conditional build:
-%bcond_without	python2	# CPython 2.x binding
-
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.9.39
-Release:	2
+Version:	0.10.1
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	b937d5e980fa9704f20b57df688845c0
+# Source0-md5:	1060eb69d6994a847eecb73c4d391ced
 URL:		http://tevent.samba.org/
-%if %{with python2}
-BuildRequires:	python-devel >= 1:2.4.2
-BuildRequires:	python-talloc-devel >= 2:2.1.16
-%endif
 BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	python3-talloc-devel >= 2:2.1.16
 BuildRequires:	rpm-pythonprov
@@ -57,19 +49,6 @@ Header files for tevent library.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki tevent.
 
-%package -n python-tevent
-Summary:	Python 2 bindings for tevent
-Summary(pl.UTF-8):	Interfejs Pythona 2 do tevent
-Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
-Requires:	python-talloc >= 2:2.1.16
-
-%description -n python-tevent
-Python 2 bindings for tevent.
-
-%description -n python-tevent -l pl.UTF-8
-Interfejs Pythona 2 do tevent.
-
 %package -n python3-tevent
 Summary:	Python 3 bindings for tevent
 Summary(pl.UTF-8):	Interfejs Pythona 3 do tevent
@@ -94,8 +73,7 @@ CFLAGS="%{rpmcflags}" \
 %{__python3} buildtools/bin/waf configure \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
-	--disable-rpath \
-	%{?with_python2:--extra-python=%{__python}}
+	--disable-rpath
 
 %{__make} \
 	V=1
@@ -105,12 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%if %{with python2}
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
-%py_postclean
-%endif
 
 %py3_comp $RPM_BUILD_ROOT%{py3_sitedir}
 %py3_ocomp $RPM_BUILD_ROOT%{py3_sitedir}
@@ -131,13 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libtevent.so
 %{_includedir}/tevent.h
 %{_pkgconfigdir}/tevent.pc
-
-%if %{with python2}
-%files -n python-tevent
-%defattr(644,root,root,755)
-%attr(755,root,root) %{py_sitedir}/_tevent.so
-%{py_sitedir}/tevent.py[co]
-%endif
 
 %files -n python3-tevent
 %defattr(644,root,root,755)
