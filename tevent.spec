@@ -7,7 +7,8 @@ License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
 # Source0-md5:	105c7a4dbb96f1751eb27dfd05e7fa84
-URL:		http://tevent.samba.org/
+URL:		https://tevent.samba.org/
+BuildRequires:	libbsd-devel
 BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	python3-talloc-devel >= 2:2.3.0
 BuildRequires:	rpm-pythonprov
