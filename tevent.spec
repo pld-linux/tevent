@@ -15,7 +15,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.704
 BuildRequires:	talloc-devel >= 2:2.3.2
 # tevent 0.10+ dropped python2 support
-Obsoletes:	python-tevent
+Obsoletes:	python-tevent < 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
