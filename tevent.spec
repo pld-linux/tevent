@@ -8,12 +8,13 @@ Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
 # Source0-md5:	ac12f248559e21410b036f4bfe6b8987
 URL:		https://tevent.samba.org/
+BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
-BuildRequires:	python3-devel >= 1:3.2
-BuildRequires:	python3-talloc-devel >= 2:2.3.2
+BuildRequires:	python3-devel >= 1:3.6
+BuildRequires:	python3-talloc-devel >= 2:2.4.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.704
-BuildRequires:	talloc-devel >= 2:2.3.2
+BuildRequires:	talloc-devel >= 2:2.4.0
 # tevent 0.10+ dropped python2 support
 Obsoletes:	python-tevent < 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,7 +45,7 @@ Summary:	Header files for tevent library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tevent
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	talloc-devel >= 2:2.3.2
+Requires:	talloc-devel >= 2:2.4.0
 
 %description devel
 Header files for tevent library.
@@ -57,7 +58,7 @@ Summary:	Python 3 bindings for tevent
 Summary(pl.UTF-8):	Interfejs Pythona 3 do tevent
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-talloc >= 2:2.3.2
+Requires:	python3-talloc >= 2:2.4.0
 
 %description -n python3-tevent
 Python 3 bindings for tevent.
