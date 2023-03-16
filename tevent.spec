@@ -10,6 +10,7 @@ Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
 URL:		https://tevent.samba.org/
 BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
+BuildRequires:	pkgconfig
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-talloc-devel >= 2:2.4.0
