@@ -1,22 +1,22 @@
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.15.0
+Version:	0.16.1
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	80b3cee64c4a4d9eee58079624bd04b6
+# Source0-md5:	c739515f59e4cde1716f00bf14c64930
 URL:		https://tevent.samba.org/
 BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-modules >= 1:3.6
-BuildRequires:	python3-talloc-devel >= 2:2.4.1
+BuildRequires:	python3-talloc-devel >= 2:2.4.2
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.704
-BuildRequires:	talloc-devel >= 2:2.4.1
+BuildRequires:	talloc-devel >= 2:2.4.2
 # tevent 0.10+ dropped python2 support
 Obsoletes:	python-tevent < 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +47,7 @@ Summary:	Header files for tevent library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tevent
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	talloc-devel >= 2:2.4.1
+Requires:	talloc-devel >= 2:2.4.2
 
 %description devel
 Header files for tevent library.
@@ -60,7 +60,7 @@ Summary:	Python 3 bindings for tevent
 Summary(pl.UTF-8):	Interfejs Pythona 3 do tevent
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-talloc >= 2:2.4.1
+Requires:	python3-talloc >= 2:2.4.2
 
 %description -n python3-tevent
 Python 3 bindings for tevent.
@@ -75,10 +75,10 @@ Interfejs Pythona 3 do tevent.
 CC="%{__cc}" \
 CFLAGS="%{rpmcflags}" \
 ./configure \
-    --jobs=1 \
-    --prefix=%{_prefix} \
-    --libdir=%{_libdir} \
-    --disable-rpath
+	--jobs=1 \
+	--prefix=%{_prefix} \
+	--libdir=%{_libdir} \
+	--disable-rpath
 
 %{__make} \
 	V=1
