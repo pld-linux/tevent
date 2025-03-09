@@ -1,22 +1,22 @@
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.16.1
+Version:	0.16.2
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	c739515f59e4cde1716f00bf14c64930
+# Source0-md5:	48c601d9924c3fb9d245704fadef3078
 URL:		https://tevent.samba.org/
 BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-modules >= 1:3.6
-BuildRequires:	python3-talloc-devel >= 2:2.4.2
+BuildRequires:	python3-talloc-devel >= 2:2.4.3
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.704
-BuildRequires:	talloc-devel >= 2:2.4.2
+BuildRequires:	talloc-devel >= 2:2.4.3
 # tevent 0.10+ dropped python2 support
 Obsoletes:	python-tevent < 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
