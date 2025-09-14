@@ -1,12 +1,12 @@
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.16.2
-Release:	2
+Version:	0.17.1
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	48c601d9924c3fb9d245704fadef3078
+# Source0-md5:	acb22731f1b5cd51eb9295e5531a3e21
 URL:		https://tevent.samba.org/
 BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
