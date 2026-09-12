@@ -1,22 +1,22 @@
 Summary:	An event system library
 Summary(pl.UTF-8):	Biblioteka systemu zdarzeń
 Name:		tevent
-Version:	0.17.1
+Version:	0.17.2
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://www.samba.org/ftp/tevent/%{name}-%{version}.tar.gz
-# Source0-md5:	acb22731f1b5cd51eb9295e5531a3e21
+# Source0-md5:	5ae0d8c7c6e68175888045df83ae252f
 URL:		https://tevent.samba.org/
 BuildRequires:	cmocka-devel >= 1.1.3
 BuildRequires:	libbsd-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-modules >= 1:3.6
-BuildRequires:	python3-talloc-devel >= 2:2.4.3
+BuildRequires:	python3-talloc-devel >= 2:2.5.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.704
-BuildRequires:	talloc-devel >= 2:2.4.3
+BuildRequires:	talloc-devel >= 2:2.5.0
 # tevent 0.10+ dropped python2 support
 Obsoletes:	python-tevent < 0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,7 +47,7 @@ Summary:	Header files for tevent library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tevent
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	talloc-devel >= 2:2.4.2
+Requires:	talloc-devel >= 2:2.5.0
 
 %description devel
 Header files for tevent library.
@@ -60,7 +60,7 @@ Summary:	Python 3 bindings for tevent
 Summary(pl.UTF-8):	Interfejs Pythona 3 do tevent
 Group:		Libraries/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python3-talloc >= 2:2.4.2
+Requires:	python3-talloc >= 2:2.5.0
 
 %description -n python3-tevent
 Python 3 bindings for tevent.
@@ -100,17 +100,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libtevent.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libtevent.so.0
+%{_libdir}/libtevent.so.*.*.*
+%ghost %{_libdir}/libtevent.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libtevent.so
+%{_libdir}/libtevent.so
 %{_includedir}/tevent.h
 %{_pkgconfigdir}/tevent.pc
 
 %files -n python3-tevent
 %defattr(644,root,root,755)
-%attr(755,root,root) %{py3_sitedir}/_tevent.cpython-*.so
+%{py3_sitedir}/_tevent.cpython-*.so
 %{py3_sitedir}/tevent.py
 %{py3_sitedir}/__pycache__/tevent.cpython-*.py[co]
